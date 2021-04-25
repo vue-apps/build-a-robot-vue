@@ -13,8 +13,7 @@
     </div>
     <div class="middle-row">
       <div class="left part">
-        <img v-bind:src="availableParts.arms[selectedLeftArmIndex].src" />arm"
-        />
+        <img :src="availableParts.arms[selectedLeftArmIndex].src" />arm" />
         <button v-on:click="selectPreviousLeftArm()" class="prev-selector">
           &#9650;
         </button>
@@ -23,7 +22,7 @@
         </button>
       </div>
       <div class="center part">
-        <img v-bind:src="availableParts.torsos[selectedTorsoIndex].src" />
+        <img :src="availableParts.torsos[selectedTorsoIndex].src" />
         <button v-on:click="selectPreviousTorso()" class="prev-selector">
           &#9668;
         </button>
@@ -32,7 +31,7 @@
         </button>
       </div>
       <div class="right part">
-        <img v-bind:src="availableParts.arms[selectedRightArmIndex].src" />
+        <img :src="availableParts.arms[selectedRightArmIndex].src" />
         <button v-on:click="selectPreviousRightArm()" class="prev-selector">
           &#9650;
         </button>
@@ -43,7 +42,7 @@
     </div>
     <div class="bottom-row">
       <div class="bottom part">
-        <img v-bind:src="availableParts.bases[selectedBaseIndex].src" />
+        <img :src="availableParts.bases[selectedBaseIndex].src" />
         <button v-on:click="selectPreviousBase()" class="prev-selector">
           &#9668;
         </button>
