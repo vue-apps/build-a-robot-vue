@@ -14,28 +14,28 @@
     <div class="middle-row">
       <div class="left part">
         <img :src="availableParts.arms[selectedLeftArmIndex].src" />arm" />
-        <button v-on:click="selectPreviousLeftArm()" class="prev-selector">
+        <button @click="selectPreviousLeftArm()" class="prev-selector">
           &#9650;
         </button>
-        <button v-on:click="selectNextLeftArm()" class="next-selector">
+        <button @click="selectNextLeftArm()" class="next-selector">
           &#9660;
         </button>
       </div>
       <div class="center part">
         <img :src="availableParts.torsos[selectedTorsoIndex].src" />
-        <button v-on:click="selectPreviousTorso()" class="prev-selector">
+        <button @click="selectPreviousTorso()" class="prev-selector">
           &#9668;
         </button>
-        <button v-on:click="selectNextTorso()" class="next-selector">
+        <button @click="selectNextTorso()" class="next-selector">
           &#9658;
         </button>
       </div>
       <div class="right part">
         <img :src="availableParts.arms[selectedRightArmIndex].src" />
-        <button v-on:click="selectPreviousRightArm()" class="prev-selector">
+        <button @click="selectPreviousRightArm()" class="prev-selector">
           &#9650;
         </button>
-        <button v-on:click="selectNextRightArm()" class="next-selector">
+        <button @click="selectNextRightArm()" class="next-selector">
           &#9660;
         </button>
       </div>
@@ -43,10 +43,10 @@
     <div class="bottom-row">
       <div class="bottom part">
         <img :src="availableParts.bases[selectedBaseIndex].src" />
-        <button v-on:click="selectPreviousBase()" class="prev-selector">
+        <button @click="selectPreviousBase()" class="prev-selector">
           &#9668;
         </button>
-        <button v-on:click="selectNextBase()" class="next-selector">
+        <button @click="selectNextBase()" class="next-selector">
           &#9658;
         </button>
       </div>
