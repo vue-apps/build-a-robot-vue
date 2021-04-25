@@ -2,6 +2,9 @@
   <div>
     <div class="top-row">
       <div class="top part">
+        <div class="robot-name">
+          {{ selectedRobot.head.title }}
+        </div>
         <img v-bind:src="selectedRobot.head.src" />
         <button v-on:click="selectPreviousHead()" class="prev-selector">
           &#9668;
@@ -156,6 +159,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.robot-name {
+  position: absolute;
+  top: -25px;
+  text-align: center;
+  width: 100%;
+}
+
 .part {
   position: relative;
   width: 165px;
