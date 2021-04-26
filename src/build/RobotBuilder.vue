@@ -4,6 +4,9 @@
       <div class="top part">
         <div class="robot-name">
           {{ selectedRobot.head.title }}
+          <span v-show="selectedRobot.head.onSale" class="sale">
+            - On Sale!</span
+          >
         </div>
         <img v-bind:src="selectedRobot.head.src" />
         <button v-on:click="selectPreviousHead()" class="prev-selector">
@@ -164,6 +167,11 @@ export default {
   top: -25px;
   text-align: center;
   width: 100%;
+}
+
+.sale {
+  color: red;
+  font-weight: bold;
 }
 
 .part {
