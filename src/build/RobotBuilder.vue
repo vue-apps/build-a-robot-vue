@@ -19,57 +19,63 @@
       </CollapsibleSection>
       <button class="add-to-cart" @click="addToCart">Add to Cart</button>
     </div>
+    <div class="robot-parts">
+      <div class="top-row">
+        <div class="robot-name">
+          {{ selectedRobot.head.title }}
+          <span v-show="selectedRobot.head.onSale" class="sale">
+            - On Sale!</span
+          >
+        </div>
 
-    <div class="top-row">
-      <!-- <div class="robot-name">
-        {{ selectedRobot.head.title }}
-        <span v-show="selectedRobot.head.onSale" class="sale"> - On Sale!</span> -->
-
-      <PartSelector
-        :parts="availableParts.heads"
-        position="top"
-        @partSelected="(part) => (selectedRobot.head = part)"
-      />
+        <PartSelector
+          :parts="availableParts.heads"
+          position="top"
+          @partSelected="(part) => (selectedRobot.head = part)"
+        />
+      </div>
+      <div class="middle-row">
+        <PartSelector
+          :parts="availableParts.arms"
+          position="left"
+          @partSelected="(part) => (selectedRobot.leftArm = part)"
+        />
+        <PartSelector
+          :parts="availableParts.torsos"
+          position="center"
+          @partSelected="(part) => (selectedRobot.torso = part)"
+        />
+        <PartSelector
+          :parts="availableParts.arms"
+          position="right"
+          @partSelected="(part) => (selectedRobot.rightArm = part)"
+        />
+      </div>
+      <div class="bottom-row">
+        <PartSelector
+          :parts="availableParts.bases"
+          position="bottom"
+          @partSelected="(part) => (selectedRobot.base = part)"
+        />
+      </div>
     </div>
-    <div class="middle-row">
-      <PartSelector
-        :parts="availableParts.arms"
-        position="left"
-        @partSelected="(part) => (selectedRobot.leftArm = part)"
-      />
-      <PartSelector
-        :parts="availableParts.torsos"
-        position="center"
-        @partSelected="(part) => (selectedRobot.torso = part)"
-      />
-      <PartSelector
-        :parts="availableParts.arms"
-        position="right"
-        @partSelected="(part) => (selectedRobot.rightArm = part)"
-      />
+    <div class="cart-info">
+      <h2>Cart Details</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Robot</th>
+            <th class="cost">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(robot, index) in cart" :key="index">
+            <td>{{ robot.head.title }}</td>
+            <td class="cost">{{ robot.cost }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="bottom-row">
-      <PartSelector
-        :parts="availableParts.bases"
-        position="bottom"
-        @partSelected="(part) => (selectedRobot.base = part)"
-      />
-    </div>
-    <h1>Cart</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Robot</th>
-          <th class="cost">Cost</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(robot, index) in cart" :key="index">
-          <td>{{ robot.head.title }}</td>
-          <td class="cost">{{ robot.cost }}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </template>
 
@@ -121,28 +127,55 @@ export default {
 </script>
 
 <style scoped lang="scss">
-table {
-  border-collapse: collapse;
-
-  td,
-  th {
-    text-align: left;
-    padding: 10px;
-    padding-right: 5px;
-    border: 1px solid #c5c5c5;
-  }
-}
 .robot-name {
   position: absolute;
   top: -25px;
   text-align: center;
   width: 100%;
+  .sale {
+    color: red;
+  }
+}
+
+.cart-info {
+  // text-align: center;
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 250px;
+
+  table {
+    border-collapse: collapse;
+
+    td,
+    th {
+      text-align: left;
+      padding: 10px;
+      padding-right: 5px;
+      border: 1px solid #c5c5c5;
+    }
+  }
 }
 
 .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   position: relative;
+
+  // @media (max-width: 1016px) {
+  //   &.content {
+  //     width: 600px;
+  //   }
+  // }
+  @media (min-width: 820px) {
+    &.content {
+      justify-content: flex-start;
+    }
+  }
+
   .add-to-cart {
-    position: absolute;
+    // position: absolute;
     width: 210px;
     padding: 3px;
     font-size: 16px;
@@ -167,12 +200,24 @@ table {
 }
 
 .preview {
-  position: absolute;
-  top: -20px;
-  right: 0;
+  // position: absolute;
+  // top: -20px;
+  // right: 0;
   width: 210px;
   height: 210px;
   padding: 5px;
+
+  // @media (max-width: 1016px) {
+  //   &.preview {
+  //     right: -200px;
+  //   }
+  // }
+
+  // @media (max-width: 860px) {
+  //   &.preview {
+  //     position: static;
+  //   }
+  // }
 }
 .preview-content {
   border: 1px solid #999;

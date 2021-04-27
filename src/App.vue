@@ -44,13 +44,13 @@ body {
     margin: 0 auto;
     padding: 30px;
     background-color: #fff;
-    width: 1024px;
+    max-width: 1024px;
     min-height: 300px;
   }
 
   header {
     background-color: #999;
-    width: 1084px;
+    max-width: 1084px;
     margin: 0 auto;
 
     ul {
