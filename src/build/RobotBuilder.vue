@@ -9,11 +9,11 @@
             - On Sale!</span
           >
         </div>
-        <img v-bind:src="selectedRobot.head.src" />
-        <button @:click="selectPreviousHead()" class="prev-selector">
+        <img :src="selectedRobot.head.src" />
+        <button @click="selectPreviousHead()" class="prev-selector">
           &#9668;
         </button>
-        <button @:click="selectNextHead()" class="next-selector">
+        <button @click="selectNextHead()" class="next-selector">
           &#9658;
         </button>
       </div>
