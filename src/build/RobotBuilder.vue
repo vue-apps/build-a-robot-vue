@@ -58,7 +58,24 @@
         </button>
       </div>
     </div>
+    <h1>Cart</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Robot</th>
+        <th class="cost">Cost</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr v-for="(robot,index) in cart" :key="index">
+        <td>{{robot.head.title}}</td>
+        <td class="cost">{{robot.cost}}</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
+
 </template>
 
 <script>
@@ -170,6 +187,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  text-align: left;
+  padding: 10px;
+  padding-right: 5px;
+  border: 1px solid #c5c5c5
+}
+
 .content {
   position: relative;
   .add-to-cart {
