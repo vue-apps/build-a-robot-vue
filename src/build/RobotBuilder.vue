@@ -48,11 +48,13 @@ export default {
     return {
       availableParts,
       cart: [],
-      head: {},
-      leftArm: {},
-      rightArm: {},
-      torso: {},
-      base: {},
+      selectedRobot: {
+        head: {},
+        leftArm: {},
+        rightArm: {},
+        torso: {},
+        base: {},
+      },
     };
   },
   mixins: [createdHookMixin],
