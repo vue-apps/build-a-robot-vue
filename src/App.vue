@@ -12,7 +12,7 @@
     </header>
     <main>
       <!-- <HomePage /> -->
-      <RobotBuilder />
+        <RobotBuilder />
     </main>
   </div>
 </template>
@@ -30,11 +30,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 body {
   background: linear-gradient(to bottom, #555, #999);
   background-attachment: fixed;
 }
+</style>
+
+<style scoped lang="scss">
 
 #app {
   font-family: 'Avenir', Arial, Helvetica, sans-serif;
