@@ -10,10 +10,10 @@
           >
         </div>
         <img v-bind:src="selectedRobot.head.src" />
-        <button v-on:click="selectPreviousHead()" class="prev-selector">
+        <button @:click="selectPreviousHead()" class="prev-selector">
           &#9668;
         </button>
-        <button v-on:click="selectNextHead()" class="next-selector">
+        <button @:click="selectNextHead()" class="next-selector">
           &#9658;
         </button>
       </div>
@@ -59,23 +59,21 @@
       </div>
     </div>
     <h1>Cart</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Robot</th>
-        <th class="cost">Cost</th>
-      </tr>
-
-    </thead>
-    <tbody>
-      <tr v-for="(robot,index) in cart" :key="index">
-        <td>{{robot.head.title}}</td>
-        <td class="cost">{{robot.cost}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Robot</th>
+          <th class="cost">Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(robot, index) in cart" :key="index">
+          <td>{{ robot.head.title }}</td>
+          <td class="cost">{{ robot.cost }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
 </template>
 
 <script>
@@ -93,6 +91,9 @@ function getNextValidIndex(index, length) {
 
 export default {
   name: 'RobotBuilder',
+  created() {
+    console.log('component mounted');
+  },
   data() {
     return {
       availableParts,
@@ -122,9 +123,14 @@ export default {
   methods: {
     addToCart() {
       const robot = this.selectedRobot;
-      const cost = robot.head.cost + robot.leftArm.cost + robot.rightArm.cost + robot.torso.cost + robot.base.cost;
-      this.cart.push(Object.assign({}, robot, {cost}));
-      console.log(this.cart)
+      const cost =
+        robot.head.cost +
+        robot.leftArm.cost +
+        robot.rightArm.cost +
+        robot.torso.cost +
+        robot.base.cost;
+      this.cart.push(Object.assign({}, robot, { cost }));
+      console.log(this.cart);
     },
     selectNextHead() {
       this.selectedHeadIndex = getNextValidIndex(
@@ -191,16 +197,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 table {
   border-collapse: collapse;
-}
 
-td, th {
-  text-align: left;
-  padding: 10px;
-  padding-right: 5px;
-  border: 1px solid #c5c5c5
+  td,
+  th {
+    text-align: left;
+    padding: 10px;
+    padding-right: 5px;
+    border: 1px solid #c5c5c5;
+  }
 }
 
 .content {
@@ -213,8 +219,8 @@ td, th {
     font-size: 16px;
   }
   .sale-border {
-  border: 3px solid red;
-}
+    border: 3px solid red;
+  }
 }
 
 .robot-name {
@@ -234,9 +240,9 @@ td, th {
   width: 165px;
   height: 165px;
   border: 3px solid #aaa;
-}
-.part img {
-  width: 165px;
+  img {
+    width: 165px;
+  }
 }
 .top-row {
   display: flex;
@@ -256,16 +262,17 @@ td, th {
 }
 .left {
   border-right: none;
+  img {
+    transform: rotate(-90deg);
+  }
 }
 .right {
   border-left: none;
+  img {
+    transform: rotate(90deg);
+  }
 }
-.left img {
-  transform: rotate(-90deg);
-}
-.right img {
-  transform: rotate(90deg);
-}
+
 .bottom {
   border-top: none;
 }
