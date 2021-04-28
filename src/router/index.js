@@ -8,6 +8,8 @@ import RobotHeads from '@/parts/RobotHeads';
 import RobotArms from '@/parts/RobotArms';
 import RobotTorsos from '@/parts/RobotTorsos';
 import RobotBases from '@/parts/RobotBases';
+import SidebarStandard from '@/sidebar/SidebarStandard';
+import SidebarBuild from '@/sidebar/SidebarBuild';
 
 Vue.use(Router);
 
@@ -16,12 +18,18 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: HomePage,
+      components: {
+        default: HomePage,
+        sidebar: SidebarStandard,
+      },
     },
     {
       path: '/build',
       name: 'Build',
-      component: RobotBuilder,
+      components: {
+        default: RobotBuilder,
+        sidebar: SidebarBuild,
+      },
     },
     {
       path: '/parts/browse',
