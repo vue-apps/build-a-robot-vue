@@ -19,6 +19,11 @@
               Browse Parts
             </router-link>
           </li>
+          <li class="nav-item cart">
+            <router-link class="nav-link" to="/cart">
+              Cart
+            </router-link>
+          </li>
         </ul>
       </nav>
     </header>
@@ -70,6 +75,12 @@ body {
         padding: 5px 10px;
         font-size: 22px;
         border-right: 1px solid #bbb;
+
+        &.cart {
+          position: relative;
+          margin-left: auto;
+          border-right: none;
+        }
 
         .router-link-active {
           color: white;
