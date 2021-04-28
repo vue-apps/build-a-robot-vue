@@ -59,23 +59,6 @@
         />
       </div>
     </div>
-    <div class="cart-info">
-      <h2>Cart Details</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Robot</th>
-            <th class="cost">Cost</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(robot, index) in cart" :key="index">
-            <td>{{ robot.head.title }}</td>
-            <td class="cost">{{ robot.cost }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </template>
 
@@ -150,25 +133,6 @@ export default {
   }
 }
 
-.cart-info {
-  // text-align: center;
-  padding-top: 20px;
-  padding-left: 20px;
-  width: 250px;
-
-  table {
-    border-collapse: collapse;
-
-    td,
-    th {
-      text-align: left;
-      padding: 10px;
-      padding-right: 5px;
-      border: 1px solid #c5c5c5;
-    }
-  }
-}
-
 .content {
   display: flex;
   justify-content: center;
@@ -176,19 +140,7 @@ export default {
   flex-wrap: wrap;
   position: relative;
 
-  // @media (max-width: 1016px) {
-  //   &.content {
-  //     width: 600px;
-  //   }
-  // }
-  @media (min-width: 820px) {
-    &.content {
-      justify-content: flex-start;
-    }
-  }
-
   .add-to-cart {
-    // position: absolute;
     width: 210px;
     padding: 3px;
     font-size: 16px;
@@ -213,24 +165,17 @@ export default {
 }
 
 .preview {
-  // position: absolute;
-  // top: -20px;
-  // right: 0;
   width: 210px;
   height: 210px;
   padding: 5px;
 
-  // @media (max-width: 1016px) {
-  //   &.preview {
-  //     right: -200px;
-  //   }
-  // }
-
-  // @media (max-width: 860px) {
-  //   &.preview {
-  //     position: static;
-  //   }
-  // }
+  @media (min-width: 952px) {
+    &.preview {
+      position: absolute;
+      top: -35px;
+      right: -35px;
+    }
+  }
 }
 .preview-content {
   border: 1px solid #999;
