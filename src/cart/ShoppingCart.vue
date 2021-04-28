@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Cart</h1>
+    <h2>Shopping Cart</h2>
     <table>
       <thead>
         <tr>
@@ -37,16 +37,27 @@ export default {
 };
 </script>
 
-<style scoped>
-td,
-th {
-  padding: 5px;
-}
+<style scoped lang="scss">
 .robot-title {
   text-align: left;
   padding-right: 200px;
 }
 .cost {
-  text-align: right;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+
+  thead {
+    background-color: #eee;
+  }
+
+  td,
+  th {
+    padding: 10px;
+    padding-right: 5px;
+    border: 1px solid #c5c5c5;
+  }
 }
 </style>
