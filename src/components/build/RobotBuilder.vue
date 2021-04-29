@@ -63,8 +63,6 @@
 </template>
 
 <script>
-// import availableParts from '@/data/parts';
-import createdHookMixin from '@/components/build/created-hook-mixin';
 import PartSelector from '@/components/build/PartSelector';
 import CollapsibleSection from '@/components/shared/CollapsibleSection';
 
@@ -101,7 +99,6 @@ export default {
       },
     };
   },
-  mixins: [createdHookMixin],
   computed: {
     availableParts() {
       return this.$store.state.parts;
