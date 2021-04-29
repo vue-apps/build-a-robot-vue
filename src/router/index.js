@@ -1,16 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HomePage from '@/home/HomePage';
-import RobotBuilder from '@/build/RobotBuilder';
-import PartInfo from '@/parts/PartInfo';
-import BrowseParts from '@/parts/BrowseParts';
-import RobotHeads from '@/parts/RobotHeads';
-import RobotArms from '@/parts/RobotArms';
-import RobotTorsos from '@/parts/RobotTorsos';
-import RobotBases from '@/parts/RobotBases';
-import SidebarStandard from '@/sidebar/SidebarStandard';
-import SidebarBuild from '@/sidebar/SidebarBuild';
-import ShoppingCart from '@/cart/ShoppingCart';
+import HomePage from '@/components/home/HomePage';
+import RobotBuilder from '@/components/build/RobotBuilder';
+import PartInfo from '@/components/parts/PartInfo';
+import BrowseParts from '@/components/parts/BrowseParts';
+import RobotHeads from '@/components/parts/RobotHeads';
+import RobotArms from '@/components/parts/RobotArms';
+import RobotTorsos from '@/components/parts/RobotTorsos';
+import RobotBases from '@/components/parts/RobotBases';
+import SidebarStandard from '@/components/sidebar/SidebarStandard';
+import SidebarBuild from '@/components/sidebar/SidebarBuild';
+import ShoppingCart from '@/components/cart/ShoppingCart';
 
 Vue.use(Router);
 

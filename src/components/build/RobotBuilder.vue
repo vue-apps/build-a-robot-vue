@@ -64,9 +64,9 @@
 
 <script>
 import availableParts from '@/data/parts';
-import createdHookMixin from '@/build/created-hook-mixin';
-import PartSelector from '@/build/PartSelector';
-import CollapsibleSection from '@/shared/CollapsibleSection';
+import createdHookMixin from '@/components/build/created-hook-mixin';
+import PartSelector from '@/components/build/PartSelector';
+import CollapsibleSection from '@/components/shared/CollapsibleSection';
 
 export default {
   name: 'RobotBuilder',
