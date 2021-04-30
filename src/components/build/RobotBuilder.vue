@@ -69,7 +69,7 @@ import CollapsibleSection from '@/components/shared/CollapsibleSection';
 export default {
   name: 'RobotBuilder',
   created() {
-    this.$store.dispatch('getParts');
+    this.$store.dispatch('robots/getParts');
   },
   beforeRouteLeave(to, from, next) {
     if (this.addedToCart) {
@@ -118,7 +118,7 @@ export default {
         robot.base.cost;
 
       this.$store
-        .dispatch('addRobotToCart', Object.assign({}, robot, { cost }))
+        .dispatch('robots/addRobotToCart', Object.assign({}, robot, { cost }))
         .then(() => {
           this.$router.push('/cart');
         });
