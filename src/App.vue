@@ -42,12 +42,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'App',
   computed: {
-    cart() {
-      return this.$store.state.robots.cart;
-    },
+    ...mapState('robots', ['cart']),
   },
 };
 </script>

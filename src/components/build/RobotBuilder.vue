@@ -1,5 +1,5 @@
 <template>
-  <div v-if="availableParts" class="content">
+  <div v-if="parts" class="content">
     <div class="preview">
       <CollapsibleSection>
         <div class="preview-content">
@@ -29,31 +29,31 @@
         </div>
 
         <PartSelector
-          :parts="availableParts.heads"
+          :parts="parts.heads"
           position="top"
           @partSelected="(part) => (selectedRobot.head = part)"
         />
       </div>
       <div class="middle-row">
         <PartSelector
-          :parts="availableParts.arms"
+          :parts="parts.arms"
           position="left"
           @partSelected="(part) => (selectedRobot.leftArm = part)"
         />
         <PartSelector
-          :parts="availableParts.torsos"
+          :parts="parts.torsos"
           position="center"
           @partSelected="(part) => (selectedRobot.torso = part)"
         />
         <PartSelector
-          :parts="availableParts.arms"
+          :parts="parts.arms"
           position="right"
           @partSelected="(part) => (selectedRobot.rightArm = part)"
         />
       </div>
       <div class="bottom-row">
         <PartSelector
-          :parts="availableParts.bases"
+          :parts="parts.bases"
           position="bottom"
           @partSelected="(part) => (selectedRobot.base = part)"
         />
@@ -63,6 +63,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import PartSelector from '@/components/build/PartSelector';
 import CollapsibleSection from '@/components/shared/CollapsibleSection';
 
@@ -99,9 +100,8 @@ export default {
     };
   },
   computed: {
-    availableParts() {
-      return this.$store.state.robots.parts;
-    },
+    ...mapState('robots', ['parts']),
+
     saleBorderClass() {
       return this.selectedRobot.head.onSale ? 'sale-border' : '';
     },
