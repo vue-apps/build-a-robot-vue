@@ -87,7 +87,6 @@ export default {
   },
   data() {
     return {
-      // availableParts,
       addedToCart: false,
       cart: [],
       selectedRobot: {
